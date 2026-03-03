@@ -26,7 +26,7 @@ This Java-based automated testing project validates an advanced web automation i
 
 - **Java**: JDK 11 or higher
 - **Maven**: 3.6.0 or higher
-- **Browser**: Chrome/Firefox (configured in WebDriver)
+- **Browser**: Chrome
 - **IDE**: IntelliJ IDEA 2021+
 - **Git**: For version control
 - 
@@ -34,9 +34,7 @@ This Java-based automated testing project validates an advanced web automation i
 ## Contact & Support
 
 - **Project Owner**: NdabeMazii
-- **Email**: contact@example.com
-- **Issues**: GitHub Issues
-- **Documentation**: See `/docs` folder
+- **Email**: ndabezinhlemazibuko6@mail.com
 
 ## Version History
 
