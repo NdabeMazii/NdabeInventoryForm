@@ -1,15 +1,13 @@
-package Basics;
+package DefaultTests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
-public class LogIntoInventory {
+public class DefaultInventoryPurchase {
 
     WebDriver driver;
 
@@ -70,10 +68,10 @@ public class LogIntoInventory {
         driver.findElement(By.id("inventory-next-btn")).click();
         Thread.sleep(1000);
 
-        orderPreview();
+        completePurchase();
     }
 
-    public void orderPreview() throws InterruptedException {
+    public void completePurchase() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.findElement(By.id("shipping-express")).click();
@@ -87,20 +85,15 @@ public class LogIntoInventory {
         driver.findElement(By.id("purchase-device-btn")).click();
         Thread.sleep(1000);
 
-        // Wait for the view-history button and click it
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("view-history-btn")));
+        viewInvoice();
+    }
+
+    public void viewInvoice() throws InterruptedException {
+
         driver.findElement(By.id("view-history-btn")).click();
         Thread.sleep(2000);
-
-        // Wait for any invoice button to appear and click the first one
-        try {
-            WebElement invoiceButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[contains(@id, 'view-invoice')]")));
-            invoiceButton.click();
-            Thread.sleep(2000);
-            System.out.println("Invoice opened successfully!");
-        } catch (Exception e) {
-            System.out.println("No invoice found yet. This may be expected if the invoice hasn't been created.");
-            e.printStackTrace();
-        }
+        driver.findElement(By.xpath("//button[contains(@id, 'view-invoice')]")).click();
+        Thread.sleep(2000);
+        System.out.println("order successful");
     }
 }

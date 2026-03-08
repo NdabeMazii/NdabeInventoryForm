@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class navigateToWebAutomationAdvancePage {
+public class WebAutomationAdvancePage {
 
     WebDriver driver;
 
-    public navigateToWebAutomationAdvancePage(WebDriver driver) {
+    public WebAutomationAdvancePage(WebDriver driver) {
         this.driver = driver;
     }
 

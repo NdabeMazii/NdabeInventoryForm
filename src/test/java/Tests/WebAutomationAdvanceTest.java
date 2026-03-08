@@ -2,9 +2,9 @@ package Tests;
 
 import org.testng.annotations.Test;
 
-public class navigateToWebAutomationAdvanceTest extends Base.BaseTest{
+public class WebAutomationAdvanceTest extends Base.BaseTest{
 
-    @Test
+    @Test(dependsOnMethods = "Tests.LogInTest.loginAndVerify")
     public void navigateToWebAutomationAdvance() throws InterruptedException {
         navigateToWebAutomationAdvancePage.clickOnLearn();
         Thread.sleep(1000);
